@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 include './Cabeçario_exercicio.php';
 include 'Classe_exercicio/ClassCrud.php';
 
