@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if(!isset($_SESSION['usuarioNome'])){
+    
+    header("Location: entrar_exercicio.php");
+}
+
 include './Cabeçario_exercicio.php';
 
 ?>

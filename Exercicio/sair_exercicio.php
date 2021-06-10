@@ -1,17 +1,8 @@
 <?php
 
-include './Cabeçario_exercicio.php';
+session_start();
 
-?>
-
-
-<?php
-
-echo "Saiu da tela";
-?>
-
-<?php
-
-include './rodape_exercicio.php';
+unset($_SESSION['usuarioNome']);
+header('Location: entrar_exercicio.php');
 
 ?>

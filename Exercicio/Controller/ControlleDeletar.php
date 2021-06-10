@@ -13,7 +13,7 @@ $dell = $Crud->deleteDB("meus_alunos", "cod=?", "i", array ($IdUser));
         
         if($dell){
             
-            header("Location: ../seleção_exercicio.php");
+            header("Location: ../selecao_exercicio.php");
             
         } else {
             

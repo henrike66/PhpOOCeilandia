@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['usuarioNome'])) {
+
+    header("Location: entrar_exercicio.php");
+}
+
+
 include './Cabeçario_exercicio.php';
 include './Classe_exercicio/ClassCrud.php';
 
@@ -42,7 +50,7 @@ else {
                     <div class="admission_form">
                         <h3>Inscrição:</h3>
                         <div class="Resultado"></div>
-                        <form id="FormCadastro" action="Controller/NovoControllerCadastro.php" method="post">
+                        <form action="Controller/NovoControllerCadastro.php" method="post" enctype = "multipart/form-data">
                             <input type="hidden" id="Acao" name="Acao" value="<?php echo $Acao; ?>">
                             <input type="hidden" id="cod" name="cod" value="<?php echo $cod; ?>">
                             <div class="row">
@@ -89,12 +97,18 @@ else {
                                     </div>
                                 </div>
 
+                                <div class="col-md-12 ">
+                                    <div class="single_input">
+                                        <input type="file" name="fileToUpload">
+                                    </div>
+                                </div>
+
                                 <div class="col-md-12">
 
                                 </div>
                                 <div class="col-md-12">
                                     <div class="apply_btn">
-                                        <button class="boxed-btn3" type="submit"><?php echo $Acao ?></button>
+                                        <button class="boxed-btn3" name="submit" type="submit"><?php echo $Acao ?></button>
                                     </div>
                                 </div>
                             </div>

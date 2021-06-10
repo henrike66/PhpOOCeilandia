@@ -83,5 +83,30 @@ class ClassCrud extends ClassBanco {
         return $this->Crud;
         
     }
+    
+//   Metodo para autenticar o usuario
+    
+    public function validarUser($user, $pass){
+        
+        $usuario = $this->conectaDB()->real_escape_string($user);
+        $senha = $this->conectaDB()->real_escape_string($pass);
+//        $senha = md5($senha);
+        
+        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' && senha='$senha' LIMIT 1";
+        
+        $result = $this->conectaDB()->query($sql);
+        $resultado = $result->fetch_assoc();
+        
+        if(empty($resultado)){
+            
+            $_SESSION['loginErro'] = "Usuário ou senha inválido";
+            header("Location: entrar_exercicio.php");
+        }elseif (isset($resultado)) {
+            
+            $_SESSION['usuarioNome'] = $resultado ['nome'];
+            header("Location: index_exercicio.php");
+        }
+        
+    }
 
 }

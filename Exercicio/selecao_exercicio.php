@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION['usuarioNome'])){
+    
+    header("Location: entrar_exercicio.php");
+}
+
+
 include './Cabeçario_exercicio.php';
 include './Classe_exercicio/ClassCrud.php';
 ?>
@@ -15,8 +24,10 @@ include './Classe_exercicio/ClassCrud.php';
         <th>Idade</th>
         <th>Telefone</th>
         <th>Cidade</th>
+        <th>imagem</th>
 
         </thead>
+       
 
         <tbody>
 
@@ -35,6 +46,7 @@ include './Classe_exercicio/ClassCrud.php';
                 <td><?php echo $Fetch[2]; ?></td>
                 <td><?php echo $Fetch[3]; ?></td>
                 <td><?php echo $Fetch[4]; ?></td>
+                <td><?php echo "<img src='Controller/$Fetch[5]' width='60' heigth='60'>"; ?></td>
                 
                 <td>
                     

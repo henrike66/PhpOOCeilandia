@@ -22,10 +22,10 @@ $Crud = new ClassCrud();
     
     <h1>Dados do Usuário</h1>
     <hr>
-    <strong>Nome:</strong> <?php echo $Fetch[1]; ?>
-    <strong>Idade:</strong> <?php echo $Fetch[2]; ?>
-    <strong>Telefone:</strong> <?php echo $Fetch[3]; ?>
-    <strong>Cidade:</strong> <?php echo $Fetch[4]; ?>
+    <strong>Nome:</strong> <?php echo $Fetch[1]; ?><br>
+    <strong>Idade:</strong> <?php echo $Fetch[2]; ?><br>
+    <strong>Telefone:</strong> <?php echo $Fetch[3]; ?><br>
+    <strong>Cidade:</strong> <?php echo $Fetch[4]; ?><br>
     
     <?php
     
